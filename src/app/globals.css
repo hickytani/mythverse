@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d0b09; /* Warm dark carbon */
+  --foreground: #f4eae0; /* Aged bone text */
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-serif: var(--font-cinzel), serif;
+}
+
+@theme {
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-serif: var(--font-cinzel), serif;
+}
+
+body {
+  background-color: #0c0a08;
+  color: #f4eae0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(38, 26, 15, 0.25) 0%, transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(180, 130, 50, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+}
+
+/* Custom Web Game-UI Scrollbar - Gold/Iron Accent */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080605;
+  border-left: 1px solid #1c1510;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b1f14;
+  border: 2px solid #080605;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37; /* Antique Gold */
+}
+
+/* -------------------------------------------------------------------------- */
+/* RPG VISUAL TEXTURES & BOX BORDERS                                          */
+/* -------------------------------------------------------------------------- */
+
+/* Mythic Gold Beveled Border */
+.border-rpg-gold {
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 
+    inset 0 0 10px rgba(212, 175, 55, 0.05),
+    0 4px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, rgba(20, 16, 12, 0.95), rgba(12, 10, 8, 0.98));
+}
+
+/* Dark Iron Trim Border */
+.border-rpg-iron {
+  border: 1px solid rgba(64, 60, 56, 0.4);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+  background-color: rgba(13, 11, 9, 0.85);
+}
+
+/* Marble White Panel */
+.bg-rpg-marble {
+  background: linear-gradient(135deg, #1c1a17 0%, #151310 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Aged Parchment Plate */
+.bg-rpg-parchment {
+  background-color: #f2e8cf;
+  color: #1a1510;
+  border: 1px solid #d4c5a1;
+  box-shadow: inset 0 0 12px rgba(130, 100, 50, 0.15);
+}
+
+/* Premium Cinematic Glow Utilities */
+.glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2), inset 0 0 10px rgba(245, 158, 11, 0.05);
+}
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), inset 0 0 10px rgba(59, 130, 246, 0.05);
+}
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2), inset 0 0 10px rgba(168, 85, 247, 0.05);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 2px rgba(212, 175, 55, 0.3);
+}
+.text-glow-amber {
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+.text-glow-blue {
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* -------------------------------------------------------------------------- */
+/* ANIMATIONS & KEYFRAMES                                                     */
+/* -------------------------------------------------------------------------- */
+
+@keyframes slow-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2%, 1%) scale(1.03); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.animate-slow-drift {
+  animation: slow-drift 35s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 4.5s ease-in-out infinite;
+}
+
+/* Character Breathing / Hovering Animation */
+@keyframes breathe {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.01); }
+}
+.animate-breathe {
+  animation: breathe 5s ease-in-out infinite;
+}
+
+/* Shield or Rune Rotation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 200s linear infinite;
+}
+
+/* Additional theme colors */
+:root {
+  --color-gold: #d4af37; /* Antique Gold */
+  --color-ice: #a0d8f1; /* Ice Blue */
+  --color-ember: #e65c00; /* Ember Orange */
+}
+
+/* Utility classes for new palette */
+.border-gold-500 { border-color: var(--color-gold); }
+.bg-gold-500 { background-color: var(--color-gold); }
+.text-gold-200 { color: var(--color-gold); }
+.border-ice-500 { border-color: var(--color-ice); }
+.bg-ice-500 { background-color: var(--color-ice); }
+.text-ice-200 { color: var(--color-ice); }
+.border-ember-500 { border-color: var(--color-ember); }
+.bg-ember-500 { background-color: var(--color-ember); }
+.text-ember-200 { color: var(--color-ember); }
+
+/* Programmatic silhouette for locked characters */
+.character-locked {
+  filter: brightness(0.06) saturate(0) contrast(1.4);
+}
+
