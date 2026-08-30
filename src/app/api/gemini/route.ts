@@ -72,7 +72,7 @@ Your task is to answer inquiries about Greek, Norse, and Egyptian mythology.
     const reply = result.response.text();
     return NextResponse.json({ reply });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Gemini API Error:', error);
     return NextResponse.json(
       { error: 'Failed to generate AI response' },

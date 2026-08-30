@@ -33,11 +33,11 @@ export default function SacredArmoury() {
   const state = useGameStore();
 
   const [activeTab, setActiveTab] = useState<'weapons' | 'armor' | 'relics' | 'materials'>('weapons');
-  const [selectedItem, setSelectedItem] = useState<any | null>(null);
+  const [selectedItem, setSelectedItem] = useState<Record<string, any> | null>(null);
   const [activeLoadout, setActiveLoadout] = useState<'battle' | 'exploration' | 'scholar'>('battle');
   const [activeSlotFilter, setActiveSlotFilter] = useState<'head' | 'chest' | 'arms' | 'legs' | null>(null);
 
-  const handleEquip = (item: any) => {
+  const handleEquip = (item: Record<string, any>) => {
     audioEngine.playEquip();
     if (activeTab === 'weapons') {
       state.equipWeapon(item.id);

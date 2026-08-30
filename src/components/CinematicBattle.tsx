@@ -21,7 +21,6 @@ interface CinematicBattleProps {
 }
 
 export default function CinematicBattle({ creature, onBattleEnd }: CinematicBattleProps) {
-  const router = useRouter();
   const state = useGameStore();
 
   const [playerHp, setPlayerHp] = useState(100);

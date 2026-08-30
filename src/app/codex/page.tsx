@@ -27,7 +27,7 @@ export default function CodexChronicle() {
   const [filterPantheon, setFilterPantheon] = useState<'all' | 'greek' | 'norse' | 'egyptian'>('all');
   const [filterType, setFilterType] = useState<'all' | 'god' | 'hero' | 'creature' | 'realm'>('all');
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
-  const [selectedEntry, setSelectedEntry] = useState<any | null>(null);
+  const [selectedEntry, setSelectedEntry] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

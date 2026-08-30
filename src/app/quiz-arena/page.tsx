@@ -6,6 +6,8 @@ import { mythologyDb } from '@/data/seed';
 import { audioEngine } from '@/utils/audioEngine';
 import { HelpCircle, Award, Clock, ArrowRight, Zap, RefreshCw, Star } from 'lucide-react';
 
+import { QuizQuestion } from '@/types/game';
+
 export default function QuizArena() {
   const state = useGameStore();
 
@@ -13,7 +15,7 @@ export default function QuizArena() {
   const [selectedPantheon, setSelectedPantheon] = useState<'greek' | 'norse' | 'egyptian'>('greek');
   const [selectedDifficulty, setSelectedDifficulty] = useState<'Initiate' | 'Scholar' | 'Champion'>('Initiate');
 
-  const [questions, setQuestions] = useState<any[]>([]);
+  const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);

@@ -36,9 +36,9 @@ export default function AnvilForge() {
   const [upgradeError, setUpgradeError] = useState<string | null>(null);
 
   const items = upgradeCategory === 'weapons' ? state.weapons : state.armor;
-  const selectedItem = items.find(i => i.id === selectedId) as any;
+  const selectedItem = items.find(i => i.id === selectedId) as Record<string, any> | undefined;
 
-  const getUpgradeCost = (item: any) => {
+  const getUpgradeCost = (item: Record<string, any> | undefined) => {
     if (!item) return {};
     const nextLvl = item.upgradeLevel + 1;
     return {
