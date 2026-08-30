@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { GameState, Pantheon, Rarity, Weapon, Armor, Relic, Quest, CampaignChapter } from '../types/game';
+import { GameState, Pantheon, Rarity, Weapon, Armor, Relic, Quest, CampaignChapter, AffinityLevel } from '../types/game';
 import { mythologyDb } from '../data/seed';
 
 export const getXpForNextLevel = (level: number) => {

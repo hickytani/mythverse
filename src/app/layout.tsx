@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Outfit, Cinzel } from 'next/font/google';
 import './globals.css';
 import GameClientWrapper from '@/components/GameClientWrapper';
@@ -13,12 +13,16 @@ const cinzel = Cinzel({
   subsets: ['latin'],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: 'MythVerse - Discover the Myths That Shaped Civilizations',
   description: 'An immersive, game-like exploration of Greek, Norse, and Egyptian mythology. Explore world maps, trace relationship graphs, complete campaigns, take quizzes, and consult the AI Lore Companion.',
   keywords: 'mythology, greek, norse, egyptian, legends, database, game, rpg, educational, wiki, next.js, react',
   authors: [{ name: 'Antigravity staff' }],
-  viewport: 'width=device-width, initial-scale=1.0',
 };
 
 export default function RootLayout({

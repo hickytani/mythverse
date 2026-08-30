@@ -223,7 +223,7 @@ export default function WorldsPortal() {
                   </div>
                 </div>
                 <p className="text-base text-neutral-400 font-serif italic tracking-wide">
-                  "{selected.tagline}"
+                  &quot;{selected.tagline}&quot;
                 </p>
               </div>
 

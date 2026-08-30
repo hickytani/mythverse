@@ -76,7 +76,7 @@ export default function MythDialogueScene({
 
         {/* Typed-like dialogue bubble */}
         <p className="text-xs text-neutral-300 leading-relaxed font-sans bg-neutral-950/40 p-4 rounded-xl border border-neutral-850/60">
-          "{dialogue}"
+          &quot;{dialogue}&quot;
         </p>
 
         {/* Choices rail */}

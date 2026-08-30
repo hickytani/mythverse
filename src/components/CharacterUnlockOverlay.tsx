@@ -117,7 +117,7 @@ export default function CharacterUnlockOverlay() {
                   transition={{ delay: 0.7 }}
                   className="text-xs text-neutral-450 italic"
                 >
-                  "{character.title}"
+                  &quot;{character.title}&quot;
                 </motion.p>
               </div>
 

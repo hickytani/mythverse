@@ -254,18 +254,18 @@ export default function PantheonCampaign({ params }: Props) {
               
               <div className="space-y-1">
                 <span className="text-[10px] text-amber-500 font-serif font-bold uppercase tracking-wider block">Campaign Dialogue</span>
-                <h4 className="font-serif font-black text-neutral-200 text-lg uppercase">{node.data.speaker || 'Oracle Echo'}</h4>
+                <h4 className="font-serif font-black text-neutral-200 text-lg uppercase">{(node.data as Record<string, any>).speaker || 'Oracle Echo'}</h4>
               </div>
 
               <div className="p-4 bg-neutral-950/60 border border-neutral-850 rounded-lg text-sm text-neutral-300 italic leading-relaxed">
-                "{node.data.text}"
+                &quot;{String((node.data as Record<string, any>).text || '')}&quot;
               </div>
 
               {node.type === 'choice' ? (
                 <div className="space-y-2">
                   <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-semibold block">Select your choice:</span>
                   <div className="grid grid-cols-1 gap-2.5">
-                    {node.data.choices.map((choice: any, idx: number) => (
+                    {((node.data as Record<string, any>).choices || []).map((choice: any, idx: number) => (
                       <button
                         key={idx}
                         onClick={() => handleChoice(node.id, choice)}

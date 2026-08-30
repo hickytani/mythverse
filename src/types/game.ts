@@ -228,7 +228,7 @@ export interface CampaignChapter {
     type: 'lore' | 'dialogue' | 'quiz' | 'battle' | 'choice';
     description: string;
     completed: boolean;
-    data: any; // Context data based on type
+    data: Record<string, unknown>; // Context data based on type
   }[];
   rewards: {
     xp: number;
